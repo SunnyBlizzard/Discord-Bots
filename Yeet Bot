@@ -1,0 +1,38 @@
+import discord
+import random
+
+
+from discord.ext.commands import Bot 
+
+BOT_PREFIX = ('.')
+client = Bot (command_prefix=BOT_PREFIX)
+
+@client.event
+async def on_ready():
+    print('Bot is Ready.')
+	
+@client.event
+async def on_message(message):
+	if message.author == client.user:
+		return
+
+	if message.content.startswith('.help'):
+		embed = discord.Embed(title="Help Page", description="Type .play to play a song :D", color=0x42f1f4)
+		await client.send_message(message.channel, embed=embed)
+ 
+
+@client.event
+async def on_message(message): 
+	if message.content.startswith('yeet'):
+		embed = discord.Embed(title="YOTE", description=" ", color=0xff56d7)
+		embed.set_image(url='https://ih0.redbubble.net/image.562324831.7631/flat,550x550,075,f.u3.jpg')
+		await client.send_message(message.channel, embed=embed)
+
+
+@client.event
+async def on_message(message):
+	if message.content.startswith('suprise'):
+		
+			
+
+client.run('NTE2MDQ1MzM3MDQ4MzgzNTAw.DtudCg.DxzTwu5r5M1To-Ta3OY2wPL32ks')
